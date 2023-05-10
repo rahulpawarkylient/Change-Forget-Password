@@ -42,7 +42,7 @@ function Forgot() {
         try {
             setIsLoading(true); // set loading state to true
             const response = await axios.post(
-                "http://localhost:8080/api/reset-password",
+                "http://localhost:7000/api/reset-password",
                 { email, otp, newPassword }
             );
             if (response.status === 200) {

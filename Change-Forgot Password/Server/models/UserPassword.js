@@ -24,6 +24,6 @@ const registerSchema = new mongoose.Schema({
   },
 });
 
-const registerModel = mongoose.model("register", registerSchema);
+const registerModel = mongoose.model("userpasswordregister", registerSchema);
 
 export default registerModel;

@@ -24,7 +24,7 @@ function Forgot() {
         }
         try {
             setIsLoading(true); // set loading state to true
-            const response = await axios.post("http://localhost:8080/api/forgot-password", { email });
+            const response = await axios.post("http://localhost:7000/api/forgot-password", { email });
             if (response.status === 200) {
                 console.log("response.data", response.data);
                 // toast.success("OTP send Successfully...");

@@ -47,7 +47,7 @@ function Register() {
     };
 
     try {
-      const response = await axios.post('http://localhost:8080/api/register', newUser);
+      const response = await axios.post('http://localhost:7000/api/register', newUser);
       console.log(response.data);
       setName('');
       setEmail('');

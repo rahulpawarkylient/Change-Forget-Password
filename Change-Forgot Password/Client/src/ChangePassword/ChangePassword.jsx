@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
+import Navbar from "../Navbar/Navbar";
 
 function ChangePassword() {
     const [currentPassword, setcurrentPassword] = useState("");
@@ -23,7 +24,7 @@ function ChangePassword() {
         }
         try {
             setIsLoading(true);
-            const response = await axios.post("http://localhost:8080/api/change-password", {
+            const response = await axios.post("http://localhost:7000/api/change-password", {
                 currentPassword,
                 newPassword,
             }, {
@@ -45,6 +46,8 @@ function ChangePassword() {
 
     };
     return (
+        <>
+            <Navbar/>
         <div className="container-sm">
             <ToastContainer
                 position="top-center"
@@ -107,6 +110,7 @@ function ChangePassword() {
                 </div >
             </section >
         </div >
+        </>
     )
 }
 

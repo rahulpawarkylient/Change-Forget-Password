@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const Connection = async (username, password) => {
-  const URL = `mongodb+srv://${username}:${password}@cluster0.d1gvfvr.mongodb.net/PROJECT0?retryWrites=true&w=majority`;
+  const URL = `mongodb+srv://${username}:${password}@cluster0.dj4wfhe.mongodb.net/COMMON-COMPONENTS?retryWrites=true&w=majority`;
 
   try {
     mongoose.set("strictQuery", false);

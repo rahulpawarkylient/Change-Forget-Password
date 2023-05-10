@@ -5,7 +5,7 @@ import {
   login,
   register,
   verifyOtpAndResetPassword,
-} from "../controllers/admin_login.js";
+} from "../controllers/UserPassword.js";
 
 const router = express.Router();
 

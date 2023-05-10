@@ -1,8 +1,11 @@
-import registerModel from "../models/admin_registerModel.js";
+import registerModel from "../models/UserPassword.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import otpGenerator from "otp-generator";
 import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 /* Login Start */
 
@@ -115,13 +118,13 @@ export const forgotPassword = async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "radharaman.ratre@kylient.com", // Enter your email address
-        pass: "yxnhhplndeonnygk", // Enter your email password
+        user: process.env.EMAIL, // Enter your email address
+        pass: process.env.EMAIL_SECRET, // Enter your email password
       },
     });
 
     const mailOptions = {
-      from: "radharaman.ratre@kylient.com", // Enter your email address
+      from: process.env.EMAIL, // Enter your email address
       to: email,
       subject: "Password Reset OTP",
       text: `Your OTP for password reset is: ${otp}`,
